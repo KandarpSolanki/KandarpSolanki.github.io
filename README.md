@@ -1,1 +1,1 @@
-# KandarpSolanki.github.io
+# kandarpsolanki.github.io
