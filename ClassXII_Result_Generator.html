@@ -1,0 +1,291 @@
+<html>
+    <head>
+        <title>Percentage Calculator</title>
+    </head>
+
+    <link rel="spreadsheet" href='style.css'>
+    
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+        body{
+            background: linear-gradient(to top,#a2d2ff,#ffafcc);
+        }
+        .container{
+            display: grid;
+            grid-template-columns: repeat(3,auto);
+            grid-template-rows: repeat(6,auto);
+            grid-gap: 15px;
+        }
+        .topbanner {
+            font-family: Arial;
+            width: 100%;
+            font-size: 55px;
+            text-align: center;
+            font-family: 'Bebas Neue';
+            text-shadow: 2px 2px 2px #f08080;
+
+        }
+        .topbanner span{
+            text-shadow: 2px 2px 2px #80ffdb;
+        }
+        .topbanner .name{
+            font-family: 'Avenir';
+            width: 100%;
+            font-size: 25px;
+            text-align: center;
+            margin-bottom: -15px;
+            text-shadow: 2px 2px 2px yellow;
+        }
+        button{
+            margin: 40px 0px 0px 0px;
+            color: white;
+            text-align: center;
+            border-radius: 8px;
+            font-size: 21px;
+            background: #42A5F6;
+            padding: 10px 20px 10px 20px;
+        }
+        .button{
+            text-align: center;
+        }
+
+        input{
+            width: 45%;
+            margin-left: 28%;
+        }
+
+        input:placeholder-shown {
+            min-height: 40px;
+  font-size: 1em;
+        }
+        .topbanner p{
+            font-family: Avenir;
+            text-shadow: 1px 1px 5px yellow;
+            font-style: italic;
+            font-size: 30px;
+            margin-top: -10px;
+        }
+
+        .result{
+            text-align: center;
+            font-size: 30px;
+            margin: 20px 0px 0px 0px;
+        }
+        .perc{
+            font-size: 45px;
+        }
+
+        .exp-10{
+            display: none;
+
+        }
+        .exp-11{
+            display: none;
+        }
+        .exp-12{
+            display: none;
+        }
+
+        .c-10:hover .exp-10 {
+            width: 20%;
+            display: block;
+            background: rgba(255, 209, 102,0.8);
+            border: 2px black solid;
+            border-radius: 2rem/2rem;
+            position: absolute;
+            padding: 8px;
+        }
+
+        .c-11:hover .exp-11 {
+            width: 20%;
+            display: block;
+            background: rgba(6, 214, 159,0.8);
+            border: 2px black solid;
+            border-radius: 2rem/2rem;
+            position: absolute;
+            padding: 8px;
+        }
+
+        .c-12:hover .exp-12 {
+            width: 20%;
+            display: block;
+            background: rgba(239, 71, 110,0.8);
+            border: 2px black solid;
+            border-radius: 2rem/2rem;
+            position: absolute;
+            padding: 8px;
+        }
+        .c-10,
+        .c-11,
+        .c-12{
+            text-align: center;
+            padding-top: 0.2em;
+            margin: 10px;
+            font-size: 30px;
+            font-family: 'DIN Condensed';
+            font-style: bold;
+            cursor: pointer;
+            border-radius: 80rem/80rem;
+            border: 2px black solid;
+        }
+        .c-10{
+            background: rgba(239, 71, 110,0.6);
+        }
+        .c-11{
+            background: rgba(255, 209, 102,0.6);
+        }
+        .c-12{
+            background: rgba(6, 214, 159,0.6);
+        }
+
+        .s1-10,
+        .s2-10,
+        .s3-10,
+        .s1-11,
+        .s2-11,
+        .s3-11,
+        .s4-11,
+        .s5-11,
+        .s1-12,
+        .s2-12,
+        .s3-12,
+        .s4-12,
+        .s5-12{
+            font-size: 20px;
+            text-align: center;
+            border: 2px black solid;
+            border-radius: 1rem/1rem;
+        }
+        .s4-11{
+            grid-column: 2/2;
+        }
+        .s5-11{
+            grid-column: 2/2;
+        }
+
+        .note{
+            font-size: 20px;
+        }
+        .note::first-line{
+            font-size: 25px;
+        }
+        footer span{
+            font-family: 'DIN Condensed';
+            font-size: 30px;
+            text-decoration: underline;
+        }
+        footer{
+            font-size: 25px;
+        }
+    </style>
+
+    <script>
+        function calculate(){
+        var elements = document.getElementsByClassName("s1-10");
+        var elements2 = document.getElementsByClassName("s2-10");
+        var elements3 = document.getElementsByClassName("s3-10");
+        var elements4 = document.getElementsByClassName("s1-11");
+        var elements5 = document.getElementsByClassName("s2-11");
+        var elements6 = document.getElementsByClassName("s3-11");
+        var elements7 = document.getElementsByClassName("s4-11");
+        var elements8 = document.getElementsByClassName("s5-11");
+        var elements9 = document.getElementsByClassName("s1-12");
+        var elements10 = document.getElementsByClassName("s2-12");
+        var elements11 = document.getElementsByClassName("s3-12");
+        var elements12 = document.getElementsByClassName("s4-12");
+        var elements13 = document.getElementsByClassName("s5-12");
+
+
+        var value = elements[0].value;
+        var value2 = elements2[0].value;
+        var value3 = elements3[0].value;
+        var value4 = elements4[0].value;
+        var value5 = elements5[0].value;
+        var value6 = elements6[0].value;
+        var value7 = elements7[0].value;
+        var value8 = elements8[0].value;
+        var value9 = elements9[0].value;
+        var value10 = elements10[0].value;
+        var value11 = elements11[0].value;
+        var value12 = elements12[0].value;
+        var value13 = elements13[0].value;
+        var sc10 = (parseFloat(value)+parseFloat(value2)+parseFloat(value3))*0.1;
+        var sub1 = sc10 + (parseFloat(value4)*0.3) + (parseFloat(value9)*0.4);
+        var sub2 = sc10 + (parseFloat(value5)*0.3) + (parseFloat(value10)*0.4);
+        var sub3 = sc10 + (parseFloat(value6)*0.3) + (parseFloat(value11)*0.4);
+        var sub4 = sc10 + (parseFloat(value7)*0.3) + (parseFloat(value12)*0.4);
+        var sub5 = sc10 + (parseFloat(value8)*0.3) + (parseFloat(value13)*0.4);
+        var sub1 = sub1 + 20;
+        var sub2 = sub2 + 20;
+        var sub3 = sub3 + 20;
+        var sub4 = sub4 + 20;
+        var sub5 = sub5 + 20;
+        var final = (sub1 + sub2 + sub3 + sub4 + sub5)/5
+
+        if (isNaN(final)){
+            alert('Can\'t keep field(s) empty !! \n                    OR \nCan\'t enter string as values !!')
+            document.getElementsByClassName('perc')[0].innerHTML = ' ';
+        }
+        else{
+            document.getElementsByClassName('perc')[0].innerHTML = final + ' %';
+        }
+    }
+    </script>
+    
+    <body>
+        <div class="topbanner">
+            <span>CBSE </span>Class XII Result Formulator<br><span class="name">by Kandarp Solanki</span>
+        </div>
+        <div class = "container">
+            <div class = "c-10">
+                Class 10 ✍️
+                <div class = 'exp-10'>According to the official notification by CBSE, the best 3 out of the 5 main subjects in Class X will be chosen to mark students and will contribute 30% in your total result.</div>
+            </div>
+            <div class = "c-11">
+                Class 11 😢
+                <div class = 'exp-11'>According to the official notification by CBSE, the marks of your final theory exam of Class XI will be chosen to mark students and will contribute 30% in your total result.</div>
+            </div>
+            <div class = "c-12">
+                Class 12 🥳
+                <div class = 'exp-12'>According to the official notification by CBSE, the marks of either your Unit Tests/Mid-Term/Preliminary Exams or a combination of them will be chosen to mark students and will contribute 40% in your total result.</div>
+            </div>
+            <input class = "s1-10" placeholder="Best Subject 1">
+            </input>
+            <input class = "s1-11" placeholder="English">
+            </input>
+            <input class = "s1-12" placeholder="English">
+            </input>
+            <input class = "s2-10" placeholder="Best Subject 2">
+            </input>
+            <input class = "s2-11" placeholder="Physics">
+            </input>
+            <input class = "s2-12" placeholder= "Physics">
+            </input>
+            <input class = "s3-10" placeholder="Best Subject 3">
+            </input>
+            <input class = "s3-11" placeholder="Chemistry">
+            </input>
+            <input class = "s3-12" placeholder="Chemistry">
+            </input>
+            <input class = "s4-11" placeholder="Maths/Bio">
+            </input>
+            <input class = "s4-12" placeholder="Maths/Bio">
+            </input>
+            <input class = "s5-11" placeholder="CS / IP / PE">
+            </input>
+            <input class = "s5-12" placeholder="CS / IP / PE">
+            </input>
+        </div>
+        
+        <div class = 'button'><button onclick="calculate()">Calculate</button></div>
+        <div class = "result">Your expected score is:<div class = "perc"></div></div>
+        <br>
+        <div class = 'note'>Please note the following points👇
+        <ul>
+            <li>All the marks being entered should be out of 80.</li>
+            <li>This formulator has been made assuming that you are getting the maximum marks in IA (Internal Assessments). Depending upon your IA, the percentage may drop down.</li>
+        </ul>
+        <footer><span>Disclaimer</span>: This is only an approximate result formulator & your actual result may differ upon moderation by your school.<br>The creator takes no responsibilty if your actual result matches/ does not matches with this formulator</footer>
+        </div>
+    </body>
+</html>
