@@ -65,10 +65,13 @@
 /* 
     1. Basic
 */
-
+.html{
+    background-color: #202022;
+}
 body {
     font-family: 'Quicksand', sans-serif;
     font-weight: 400;
+    
 }
 
 .fw-bold {
@@ -354,6 +357,14 @@ a:hover, a:active {
 
 .bg-theme-purple {
     background-color: #6f42c1 !important;
+}
+
+.bg-theme-mycolor {
+    background-color: #39e796 !important;
+}
+
+.bg-theme-mycolor {
+    background-color: #39e796 !important;
 }
 
 .fg-theme-red {
@@ -1368,6 +1379,7 @@ a:hover, a:active {
 .theme-orange .bg-theme {
     background-color: #fd7e14 !important;
 }
+
 
 .theme-orange .fg-theme {
     color: #fd7e14 !important;
